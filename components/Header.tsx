@@ -102,12 +102,13 @@ export default function Header() {
                 </div>
             </div>
             <nav className="flex items-center justify-between gap-1 overflow-x-auto border-t border-white/10 bg-white px-4 py-3 sm:gap-2 sm:px-6 sm:py-3 md:px-16">
-                <NavTab href="/" active={pathname === "/"} label="Portfolio" icon="home" />
-                <NavTab href="/properties" active={pathname === "/properties"} label="Properties" icon="briefcase" />
-                <NavTab href="/investors" active={pathname === "/investors"} label="Investors" icon="user" />
-                <NavTab href="/opportunities" active={pathname === "/opportunities"} label="Opportunities" icon="document" />
-                <NavTab href="/proposals" active={pathname === "/proposals"} label="Proposals" icon="scroll" />
-                <NavTab href="/tasks" active={pathname === "/tasks"} label="Tasks" icon="task" />
+                <NavTab href="/" active={pathname === "/"} label="Dashboard" icon="dashboard" />
+                <NavTab href="/properties" active={pathname === "/properties"} label="Listings" icon="listings" />
+                <NavTab href="/investors" active={pathname === "/investors"} label="Users" icon="users" />
+                <NavTab href="/opportunities" active={pathname === "/opportunities"} label="Requests" icon="requests" />
+                <NavTab href="/settings" active={pathname === "/settings"} label="Settings" icon="settings" />
+                <NavTab href="/proposals" active={pathname === "/proposals"} label="Applications" icon="applications" />
+                <NavTab href="/tasks" active={pathname === "/tasks"} label="Tasks" icon="tasks" />
             </nav>
         </header>
     );

@@ -6,12 +6,13 @@ import { cn } from "@/lib/utils";
 export default function NavTab({ active, label, icon, href }: { active?: boolean; label: string; icon: string; href?: string }) {
     const content = (
         <>
-            {icon === "home" && <Image src="/icons/dashboard.svg" alt="" width={20} height={20} />}
-            {icon === "briefcase" && <Image src="/icons/listings.svg" alt="" width={20} height={20} />}
-            {icon === "user" && <Image src="/icons/profile.svg" alt="" width={20} height={20} />}
-            {icon === "document" && <Image src="/icons/request.svg" alt="" width={20} height={20} />}
-            {icon === "scroll" && <Image src="/icons/applications.svg" alt="" width={20} height={20} />}
-            {icon === "task" && <Image src="/icons/tasks.svg" alt="" width={20} height={20} />}
+            {icon === "dashboard" && <Image src="/icons/dashboard.svg" alt="" width={20} height={20} />}
+            {icon === "listings" && <Image src="/icons/listings.svg" alt="" width={20} height={20} />}
+            {icon === "users" && <Image src="/icons/users.svg" alt="" width={20} height={20} />}
+            {icon === "requests" && <Image src="/icons/requests.svg" alt="" width={20} height={20} />}
+            {icon === "settings" && <Image src="/icons/settings.svg" alt="" width={20} height={20} />}
+            {icon === "applications" && <Image src="/icons/applications.svg" alt="" width={20} height={20} />}
+            {icon === "tasks" && <Image src="/icons/tasks.svg" alt="" width={20} height={20} />}
             {label}
         </>
     );
