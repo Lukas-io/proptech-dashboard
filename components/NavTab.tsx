@@ -10,7 +10,6 @@ export default function NavTab({ active, label, icon, href }: { active?: boolean
             {icon === "listings" && <Image src="/icons/listings.svg" alt="" width={20} height={20} />}
             {icon === "users" && <Image src="/icons/users.svg" alt="" width={20} height={20} />}
             {icon === "requests" && <Image src="/icons/requests.svg" alt="" width={20} height={20} />}
-            {icon === "settings" && <Image src="/icons/settings.svg" alt="" width={20} height={20} />}
             {icon === "applications" && <Image src="/icons/applications.svg" alt="" width={20} height={20} />}
             {icon === "tasks" && <Image src="/icons/tasks.svg" alt="" width={20} height={20} />}
             {label}

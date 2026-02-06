@@ -13,7 +13,6 @@ export async function GET() {
     { url: '/opportunities', changefreq: 'weekly', priority: '0.7' },
     { url: '/proposals', changefreq: 'weekly', priority: '0.7' },
     { url: '/tasks', changefreq: 'weekly', priority: '0.7' },
-    { url: '/settings', changefreq: 'monthly', priority: '0.5' },
     { url: '/guides', changefreq: 'monthly', priority: '0.8' },
   ];
 

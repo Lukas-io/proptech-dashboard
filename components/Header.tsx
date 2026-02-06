@@ -104,8 +104,7 @@ export default function Header() {
                 <NavTab href="/" active={pathname === "/"} label="Dashboard" icon="dashboard" />
                 <NavTab href="/properties" active={pathname === "/properties"} label="Listings" icon="listings" />
                 <NavTab href="/investors" active={pathname === "/investors"} label="Users" icon="users" />
-                <NavTab href="/opportunities" active={pathname === "/opportunities"} label="Requests" icon="requests" />
-                <NavTab href="/settings" active={pathname === "/settings"} label="Settings" icon="settings" />
+                <NavTab href="/opportunities" active={pathname === "/opportunities"} label="Request" icon="requests" />
                 <NavTab href="/proposals" active={pathname === "/proposals"} label="Applications" icon="applications" />
                 <NavTab href="/tasks" active={pathname === "/tasks"} label="Tasks" icon="tasks" />
             </nav>
