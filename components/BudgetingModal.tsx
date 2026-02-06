@@ -1,6 +1,8 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { FiSettings, FiTrendingUp, FiBarChart2 } from "react-icons/fi";
@@ -35,67 +37,167 @@ interface BudgetingModalProps {
 export function BudgetingModal({ open, onClose }: BudgetingModalProps) {
   return (
     <Dialog open={open} onOpenChange={(isOpen) => !isOpen && onClose()}>
-      <DialogContent
-        showCloseButton={true}
-        className="max-w-[438px] gap-0 overflow-visible rounded-[10px] border-0 bg-transparent p-0 shadow-none **:data-[slot=dialog-close]:text-white **:data-[slot=dialog-close]:hover:bg-white/10 **:data-[slot=dialog-close]:hover:text-white"
-        aria-labelledby="calculator-dialog-title"
-      >
-        <div
-          className="relative z-0 flex justify-center px-6 pt-[26px] pb-0"
-          style={{
-            backgroundColor: "#105B48",
-            borderRadius: "10px 10px 0 0",
-            marginBottom: "-80px",
-          }}
-        >
-          <div className="relative h-[264px] w-[386px] overflow-hidden rounded-xl">
-            <div
-              className="absolute inset-0 rounded-xl"
-              style={{
-                background:
-                  "linear-gradient(180deg, rgba(16,91,72,0.9) 0%, rgba(16,91,72,0.95) 100%)",
-              }}
-            />
-            <div className="absolute left-1/2 top-[48%] z-10 -translate-x-1/2 -translate-y-1/2">
-              <FaCalculator className="size-20 text-white" />
-            </div>
-          </div>
-        </div>
-
-        <div className="relative z-10 rounded-b-2xl bg-white px-12 py-6">
-          {features.map((feature, index) => {
-            const Icon = feature.icon;
-            return (
+      <AnimatePresence>
+        {open && (
+          <DialogContent
+            showCloseButton={true}
+            className="max-w-[438px] gap-0 overflow-visible rounded-[10px] border-0 bg-transparent p-0 shadow-none **:data-[slot=dialog-close]:text-white **:data-[slot=dialog-close]:hover:bg-white/10 **:data-[slot=dialog-close]:hover:text-white"
+            aria-labelledby="calculator-dialog-title"
+          >
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+            >
+              {/* Top Section with Blur Background */}
               <div
-                key={index}
-                className="mb-6 flex items-center gap-[25px]"
+                className="relative z-0 flex justify-center px-6 pt-[26px] pb-0"
+                style={{
+                  backgroundColor: "#105B48",
+                  borderRadius: "10px 10px 0 0",
+                  marginBottom: "-80px",
+                }}
               >
-                <Icon
-                  className="size-6 shrink-0 text-[#52525B]"
-                  strokeWidth={1.5}
-                />
-                <div className="flex flex-col gap-1">
-                  <h3
-                    id={index === 0 ? "calculator-dialog-title" : undefined}
-                    className="font-[Euclid_Circular_B] text-base font-semibold text-[#191919]"
+                <div className="relative h-[264px] w-[386px] overflow-hidden rounded-xl">
+                  {/* Blur Background Image */}
+                  <Image
+                    src="/designs/images/overview_blur_budgeting.png"
+                    alt="Calculator background"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+
+                  {/* Overlay gradient for better contrast */}
+                  <div
+                    className="absolute inset-0 rounded-xl"
+                    style={{
+                      background:
+                        "linear-gradient(180deg, rgba(16,91,72,0.3) 0%, rgba(16,91,72,0.5) 100%)",
+                    }}
+                  />
+
+                  {/* Animated Calculator Icon */}
+                  <motion.div
+                    className="absolute left-1/2 top-[48%] z-10 -translate-x-1/2 -translate-y-1/2"
+                    initial={{ scale: 0, rotate: -180 }}
+                    animate={{
+                      scale: 1,
+                      rotate: 0,
+                      y: [0, -10, 0],
+                    }}
+                    transition={{
+                      scale: { duration: 0.5, ease: [0.34, 1.56, 0.64, 1] },
+                      rotate: { duration: 0.6, ease: [0.34, 1.56, 0.64, 1] },
+                      y: {
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: 0.8
+                      }
+                    }}
                   >
-                    {feature.title}
-                  </h3>
-                  <p className="font-[Euclid_Circular_B] text-xs font-normal text-[#606060]">
-                    {feature.description}
-                  </p>
+                    <motion.div
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <FaCalculator className="size-20 text-white drop-shadow-2xl" />
+                    </motion.div>
+                  </motion.div>
+
+                  {/* Animated floating particles */}
+                  {[...Array(3)].map((_, i) => (
+                    <motion.div
+                      key={i}
+                      className="absolute h-2 w-2 rounded-full bg-white/20"
+                      style={{
+                        left: `${20 + i * 30}%`,
+                        top: `${30 + i * 20}%`,
+                      }}
+                      animate={{
+                        y: [0, -20, 0],
+                        opacity: [0.2, 0.5, 0.2],
+                        scale: [1, 1.2, 1],
+                      }}
+                      transition={{
+                        duration: 3 + i,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: i * 0.5,
+                      }}
+                    />
+                  ))}
                 </div>
               </div>
-            );
-          })}
-          <Button
-            onClick={onClose}
-            className="mt-2 h-12 w-full rounded-[50px] bg-[#105B48] font-[Euclid_Circular_B] text-base font-medium text-white hover:bg-[#0d4a39]"
-          >
-            Open Calculator
-          </Button>
-        </div>
-      </DialogContent>
+
+              {/* Bottom Section with Features */}
+              <motion.div
+                className="relative z-10 rounded-b-2xl bg-white px-12 py-6"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.2 }}
+              >
+                {features.map((feature, index) => {
+                  const Icon = feature.icon;
+                  return (
+                    <motion.div
+                      key={index}
+                      className="mb-6 flex items-center gap-[25px]"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{
+                        duration: 0.4,
+                        delay: 0.3 + index * 0.1,
+                        ease: [0.25, 0.46, 0.45, 0.94]
+                      }}
+                      whileHover={{ x: 5 }}
+                    >
+                      <motion.div
+                        whileHover={{
+                          rotate: 360,
+                          scale: 1.2,
+                        }}
+                        transition={{ duration: 0.5 }}
+                      >
+                        <Icon
+                          className="size-6 shrink-0 text-[#52525B]"
+                          strokeWidth={1.5}
+                        />
+                      </motion.div>
+                      <div className="flex flex-col gap-1">
+                        <h3
+                          id={index === 0 ? "calculator-dialog-title" : undefined}
+                          className="font-[Euclid_Circular_B] text-base font-semibold text-[#191919]"
+                        >
+                          {feature.title}
+                        </h3>
+                        <p className="font-[Euclid_Circular_B] text-xs font-normal text-[#606060]">
+                          {feature.description}
+                        </p>
+                      </div>
+                    </motion.div>
+                  );
+                })}
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.6 }}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <Button
+                    onClick={onClose}
+                    className="mt-2 h-12 w-full rounded-[50px] bg-[#105B48] font-[Euclid_Circular_B] text-base font-medium text-white hover:bg-[#0d4a39] transition-all duration-300 hover:shadow-lg"
+                  >
+                    Open Calculator
+                  </Button>
+                </motion.div>
+              </motion.div>
+            </motion.div>
+          </DialogContent>
+        )}
+      </AnimatePresence>
     </Dialog>
   );
 }
