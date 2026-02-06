@@ -18,8 +18,7 @@ export default function Header() {
         <header className="sticky top-0 z-50 w-full bg-[#105B48]">
             <div className="flex h-14 items-center justify-between px-4 sm:h-20 sm:px-6 md:px-16">
                 <div className="flex items-center gap-2">
-                    <Image src="/icons/logo.svg" alt="Expert Investment" width={20} height={20} />
-                    <span className="text-3xl font-medium text-white">Expert Investment</span>
+                    <Image src="/icons/Logo.svg" alt="Expert Investment" width={180} height={32} className="h-8 w-auto" />
                 </div>
                 <div className="flex items-center gap-3 sm:gap-6">
                     <Tooltip>

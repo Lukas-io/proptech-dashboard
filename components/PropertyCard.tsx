@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus, Minus, MapPin, Home, Bed, Bath, Maximize2 } from "lucide-react";
+import { MapPin, Home, Bed, Bath, Maximize2 } from "lucide-react";
 import { InvestmentProperty } from "@/types";
 
 const AUTO_ADVANCE_MS = 4000;
@@ -41,7 +41,6 @@ export default function PropertyCard(props: PropertyCardProps) {
 
   const images = imagesProp ?? (imageSrc ? [imageSrc] : []);
   const [activeIndex, setActiveIndex] = useState(activeDotProp ?? 0);
-  const [isWishlisted, setIsWishlisted] = useState(false);
   const dotCount = dotsProp ?? images.length;
   const safeIndex = images.length ? activeIndex % images.length : 0;
   const showDots = images.length > 1 && dotCount > 0;
@@ -167,33 +166,15 @@ export default function PropertyCard(props: PropertyCardProps) {
         </div>
 
         {/* Right side - Action buttons */}
-        <div className="flex gap-2">
-          {showChat && status === 'active' && (
-            <button
-              type="button"
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-[#242526] text-white shadow-lg hover:bg-[#3a3a3c] transition-colors"
-              aria-label="Chat"
-            >
-              <Image src="/icons/chat.svg" alt="Chat" width={20} height={20} />
-            </button>
-          )}
+        {showChat && status === 'active' && (
           <button
             type="button"
-            onClick={(e) => {
-              e.stopPropagation();
-              e.preventDefault();
-              setIsWishlisted(!isWishlisted);
-            }}
-            className={`flex h-10 w-10 items-center justify-center rounded-full shadow-lg transition-all duration-200 ${
-              isWishlisted
-                ? 'bg-[#F04438] hover:bg-[#D93D32] text-white scale-105'
-                : 'bg-white/95 hover:bg-white text-[#191919]'
-            }`}
-            aria-label={isWishlisted ? "Remove from wishlist" : "Add to wishlist"}
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-[#242526] text-white shadow-lg hover:bg-[#3a3a3c] transition-colors"
+            aria-label="Chat"
           >
-            {isWishlisted ? <Minus className="h-5 w-5" /> : <Plus className="h-5 w-5" />}
+            <Image src="/icons/chat.svg" alt="Chat" width={20} height={20} />
           </button>
-        </div>
+        )}
       </div>
 
       {/* Bottom Info */}

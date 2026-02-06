@@ -6,7 +6,7 @@ export function getOrganizationSchema(): WithContext<Organization> {
     '@type': 'Organization',
     name: 'Expert Investment',
     url: 'https://expertinvestment.com',
-    logo: 'https://expertinvestment.com/icons/logo.svg',
+    logo: 'https://expertinvestment.com/icons/Logo.svg',
     description: 'Professional property investment analytics and portfolio management platform for real estate investors.',
     contactPoint: {
       '@type': 'ContactPoint',

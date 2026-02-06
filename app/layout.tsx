@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
+import { FloatingHelpButton } from "@/components/FloatingHelpButton";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { StructuredData } from "@/components/SEO/StructuredData";
 import { getOrganizationSchema, getSoftwareApplicationSchema } from "@/lib/schemas";
@@ -115,6 +116,7 @@ export default function RootLayout({
         <TooltipProvider>
           <Header />
           {children}
+          <FloatingHelpButton />
         </TooltipProvider>
       </body>
     </html>
