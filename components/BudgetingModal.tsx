@@ -6,7 +6,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { FiSettings, FiTrendingUp, FiBarChart2 } from "react-icons/fi";
-import { FaCalculator } from "react-icons/fa";
 
 const features = [
   {
@@ -59,8 +58,13 @@ export function BudgetingModal({ open, onClose }: BudgetingModalProps) {
                   marginBottom: "-80px",
                 }}
               >
-                <div className="relative h-[264px] w-[386px] overflow-hidden rounded-xl">
-                  {/* Blur Background Image */}
+                <motion.div
+                  className="relative h-[264px] w-[386px] overflow-hidden rounded-xl"
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.5, ease: [0.34, 1.56, 0.64, 1] }}
+                >
+                  {/* Blur Background Image with Calculator Icon */}
                   <Image
                     src="/designs/images/overview_blur_budgeting.png"
                     alt="Calculator background"
@@ -68,43 +72,6 @@ export function BudgetingModal({ open, onClose }: BudgetingModalProps) {
                     className="object-cover"
                     priority
                   />
-
-                  {/* Overlay gradient for better contrast */}
-                  <div
-                    className="absolute inset-0 rounded-xl"
-                    style={{
-                      background:
-                        "linear-gradient(180deg, rgba(16,91,72,0.3) 0%, rgba(16,91,72,0.5) 100%)",
-                    }}
-                  />
-
-                  {/* Animated Calculator Icon */}
-                  <motion.div
-                    className="absolute left-1/2 top-[48%] z-10 -translate-x-1/2 -translate-y-1/2"
-                    initial={{ scale: 0, rotate: -180 }}
-                    animate={{
-                      scale: 1,
-                      rotate: 0,
-                      y: [0, -10, 0],
-                    }}
-                    transition={{
-                      scale: { duration: 0.5, ease: [0.34, 1.56, 0.64, 1] },
-                      rotate: { duration: 0.6, ease: [0.34, 1.56, 0.64, 1] },
-                      y: {
-                        duration: 2,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                        delay: 0.8
-                      }
-                    }}
-                  >
-                    <motion.div
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <FaCalculator className="size-20 text-white drop-shadow-2xl" />
-                    </motion.div>
-                  </motion.div>
 
                   {/* Animated floating particles */}
                   {[...Array(3)].map((_, i) => (
@@ -128,7 +95,7 @@ export function BudgetingModal({ open, onClose }: BudgetingModalProps) {
                       }}
                     />
                   ))}
-                </div>
+                </motion.div>
               </div>
 
               {/* Bottom Section with Features */}

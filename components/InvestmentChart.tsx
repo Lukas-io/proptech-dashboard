@@ -44,16 +44,16 @@ const options = {
     },
     y: {
       min: 0,
-      max: 11000000,
+      max: 60,
       border: { display: true, color: "#E4E4E4" },
       grid: { display: false },
       ticks: {
-        stepSize: 2000000,
+        stepSize: 10,
         font: { size: 10 },
         color: "#919191",
         callback: (value: string | number) => {
           const n = Number(value);
-          return n === 0 ? "0" : `$${(n / 1000000).toFixed(1)}M`;
+          return n === 0 ? "0" : `${n}`;
         },
       },
     },
