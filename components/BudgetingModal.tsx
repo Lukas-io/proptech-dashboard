@@ -66,7 +66,7 @@ export function BudgetingModal({ open, onClose }: BudgetingModalProps) {
                 >
                   {/* Blur Background Image with Calculator Icon */}
                   <Image
-                    src="/designs/images/overview_blur_budgeting.png"
+                    src="/images/overview_blur_budgeting.png"
                     alt="Calculator background"
                     fill
                     className="object-cover"
