@@ -4,14 +4,18 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 export default function NavTab({ active, label, icon, href }: { active?: boolean; label: string; icon: string; href?: string }) {
+    const iconClassName = active
+        ? "brightness-0 saturate-100 invert-[39%] sepia-[28%] saturate-[1766%] hue-rotate-[122deg]"
+        : "brightness-0 saturate-100 opacity-60";
+
     const content = (
         <>
-            {icon === "dashboard" && <Image src="/icons/dashboard.svg" alt="" width={20} height={20} />}
-            {icon === "listings" && <Image src="/icons/listings.svg" alt="" width={20} height={20} />}
-            {icon === "users" && <Image src="/icons/users.svg" alt="" width={20} height={20} />}
-            {icon === "requests" && <Image src="/icons/requests.svg" alt="" width={20} height={20} />}
-            {icon === "applications" && <Image src="/icons/applications.svg" alt="" width={20} height={20} />}
-            {icon === "tasks" && <Image src="/icons/tasks.svg" alt="" width={20} height={20} />}
+            {icon === "dashboard" && <Image src="/icons/dashboard.svg" alt="" width={20} height={20} className={iconClassName} />}
+            {icon === "listings" && <Image src="/icons/listings.svg" alt="" width={20} height={20} className={iconClassName} />}
+            {icon === "users" && <Image src="/icons/users.svg" alt="" width={20} height={20} className={iconClassName} />}
+            {icon === "requests" && <Image src="/icons/requests.svg" alt="" width={20} height={20} className={iconClassName} />}
+            {icon === "applications" && <Image src="/icons/applications.svg" alt="" width={20} height={20} className={iconClassName} />}
+            {icon === "tasks" && <Image src="/icons/tasks.svg" alt="" width={20} height={20} className={iconClassName} />}
             {label}
         </>
     );
