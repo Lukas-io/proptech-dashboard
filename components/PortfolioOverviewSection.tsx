@@ -110,44 +110,44 @@ export function PortfolioOverviewSection() {
         </div>
       </div>
       <hr className="my-2.5 border" />
-      <div className="flex flex-col gap-5 xl:flex-row xl:gap-5">
-      <div className="relative min-w-0 flex-1 overflow-hidden">
-        <div className="absolute left-0 top-1/2 z-10 hidden -translate-y-1/2 sm:flex sm:items-center sm:justify-center">
-          <button
-            type="button"
-            onClick={goPrev}
-            disabled={!canGoPrev}
-            aria-label="Previous period"
-            className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full sm:h-7 sm:w-7 [&_svg]:size-3.5 sm:[&_svg]:size-4 ${
-              canGoPrev ? "bg-[#F5F5F5] text-[#191919] hover:bg-[#E4E4E4]" : "bg-[#F5F5F5] text-[#919191] cursor-not-allowed"
-            }`}
-          >
-            <MdArrowLeft />
-          </button>
+      <div className="flex flex-col gap-5 lg:flex-row lg:gap-5">
+        <div className="relative min-w-0 flex-1 overflow-hidden">
+          <div className="absolute left-0 top-1/2 z-10 hidden -translate-y-1/2 sm:flex sm:items-center sm:justify-center">
+            <button
+              type="button"
+              onClick={goPrev}
+              disabled={!canGoPrev}
+              aria-label="Previous period"
+              className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full sm:h-7 sm:w-7 [&_svg]:size-3.5 sm:[&_svg]:size-4 ${
+                canGoPrev ? "bg-[#F5F5F5] text-[#191919] hover:bg-[#E4E4E4]" : "bg-[#F5F5F5] text-[#919191] cursor-not-allowed"
+              }`}
+            >
+              <MdArrowLeft />
+            </button>
+          </div>
+          <div className="w-full min-w-0 px-1 sm:px-8">
+            <InvestmentChart data={chartData} />
+          </div>
+          <div className="absolute right-0 top-1/2 z-10 hidden -translate-y-1/2 sm:flex sm:items-center sm:justify-center">
+            <button
+              type="button"
+              onClick={goNext}
+              disabled={!canGoNext}
+              aria-label="Next period"
+              className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full sm:h-7 sm:w-7 [&_svg]:size-3.5 sm:[&_svg]:size-4 ${
+                canGoNext ? "bg-[#E4E4E4] text-[#191919] hover:bg-[#D6D6D6]" : "bg-[#E4E4E4] text-[#919191] cursor-not-allowed"
+              }`}
+            >
+              <MdArrowRight />
+            </button>
+          </div>
         </div>
-        <div className="w-full min-w-0 px-1 sm:px-8">
-          <InvestmentChart data={chartData} />
-        </div>
-        <div className="absolute right-0 top-1/2 z-10 hidden -translate-y-1/2 sm:flex sm:items-center sm:justify-center">
-          <button
-            type="button"
-            onClick={goNext}
-            disabled={!canGoNext}
-            aria-label="Next period"
-            className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full sm:h-7 sm:w-7 [&_svg]:size-3.5 sm:[&_svg]:size-4 ${
-              canGoNext ? "bg-[#E4E4E4] text-[#191919] hover:bg-[#D6D6D6]" : "bg-[#E4E4E4] text-[#919191] cursor-not-allowed"
-            }`}
-          >
-            <MdArrowRight />
-          </button>
+        <div className="grid min-w-0 w-full grid-cols-2 gap-2 sm:gap-3 lg:w-auto lg:min-w-[280px] lg:flex-1">
+          {metrics.map((m) => (
+            <MetricCard key={m.label} value={m.value} label={m.label} change={m.change} trend={m.trend} valueColor={m.valueColor} />
+          ))}
         </div>
       </div>
-      <div className="grid min-w-0 flex-1 grid-cols-2 gap-2 sm:gap-3 xl:min-w-[280px]">
-        {metrics.map((m) => (
-          <MetricCard key={m.label} value={m.value} label={m.label} change={m.change} trend={m.trend} valueColor={m.valueColor} />
-        ))}
-      </div>
-    </div>
     </>
   );
 }
