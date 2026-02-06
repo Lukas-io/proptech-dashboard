@@ -5,23 +5,22 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { FiSettings, FiTrendingUp, FiBarChart2 } from "react-icons/fi";
 
 const features = [
   {
-    icon: FiSettings,
+    icon: "/icons/budgeting/category.svg",
     title: "Calculate ROI and cash-on-cash returns",
     description:
       "Analyze potential investments with detailed financial projections and return calculations.",
   },
   {
-    icon: FiTrendingUp,
+    icon: "/icons/budgeting/track.svg",
     title: "Track investment performance over time",
     description:
       "Monitor your properties against targets with real-time performance metrics and analytics.",
   },
   {
-    icon: FiBarChart2,
+    icon: "/icons/budgeting/figures.svg",
     title: "Compare scenarios and forecast returns",
     description:
       "Adjust variables, compare investment strategies, and model future portfolio growth.",
@@ -53,7 +52,7 @@ export function BudgetingModal({ open, onClose }: BudgetingModalProps) {
               <div
                 className="relative z-0 flex justify-center px-6 pt-[26px] pb-0"
                 style={{
-                  backgroundColor: "#105B48",
+                  backgroundColor: "#0C2841",
                   borderRadius: "10px 10px 0 0",
                   marginBottom: "-80px",
                 }}
@@ -106,7 +105,6 @@ export function BudgetingModal({ open, onClose }: BudgetingModalProps) {
                 transition={{ duration: 0.4, delay: 0.2 }}
               >
                 {features.map((feature, index) => {
-                  const Icon = feature.icon;
                   return (
                     <motion.div
                       key={index}
@@ -127,9 +125,12 @@ export function BudgetingModal({ open, onClose }: BudgetingModalProps) {
                         }}
                         transition={{ duration: 0.5 }}
                       >
-                        <Icon
-                          className="size-6 shrink-0 text-[#52525B]"
-                          strokeWidth={1.5}
+                        <Image
+                          src={feature.icon}
+                          alt=""
+                          width={24}
+                          height={24}
+                          className="size-6 shrink-0"
                         />
                       </motion.div>
                       <div className="flex flex-col gap-1">
@@ -155,7 +156,7 @@ export function BudgetingModal({ open, onClose }: BudgetingModalProps) {
                 >
                   <Button
                     onClick={onClose}
-                    className="mt-2 h-12 w-full rounded-[50px] bg-[#105B48] font-[Euclid_Circular_B] text-base font-medium text-white hover:bg-[#0d4a39] transition-all duration-300 hover:shadow-lg"
+                    className="mt-2 h-12 w-full rounded-[50px] bg-[#18181B] font-[Euclid_Circular_B] text-base font-medium text-white hover:bg-[#27272A] transition-all duration-300 hover:shadow-lg"
                   >
                     Open Calculator
                   </Button>

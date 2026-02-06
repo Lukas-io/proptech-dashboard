@@ -107,6 +107,9 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="theme-color" content="#105B48" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <StructuredData data={organizationSchema} />
         <StructuredData data={softwareSchema} />
       </head>

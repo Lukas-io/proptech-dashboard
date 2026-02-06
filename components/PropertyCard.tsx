@@ -102,7 +102,9 @@ export default function PropertyCard(props: PropertyCardProps) {
                 alt={displayTitle}
                 fill
                 className="object-cover"
-                sizes="(max-width: 768px) 100vw, 418px"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 418px"
+                loading="lazy"
+                quality={85}
               />
             </motion.div>
           </motion.div>
