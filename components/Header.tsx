@@ -100,7 +100,7 @@ export default function Header() {
                     </Avatar>
                 </div>
             </div>
-            <nav className="flex items-center gap-1 overflow-x-auto border-t border-white/10 bg-white px-4 py-3 sm:gap-2 sm:px-6 sm:py-3 md:px-16">
+            <nav className="flex items-center gap-1 overflow-x-auto border-t border-white/10 bg-white px-4 py-3 sm:gap-2 sm:px-6 sm:py-3 md:justify-between md:px-16">
                 <NavTab href="/" active={pathname === "/"} label="Dashboard" icon="dashboard" />
                 <NavTab href="/properties" active={pathname === "/properties"} label="Listings" icon="listings" />
                 <NavTab href="/investors" active={pathname === "/investors"} label="Users" icon="users" />
