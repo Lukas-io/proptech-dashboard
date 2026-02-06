@@ -96,7 +96,7 @@ export default function Header() {
                         <TooltipContent>Market Insights</TooltipContent>
                     </Tooltip>
                     <Avatar size="lg" className="size-9 bg-white text-[#105B48] sm:size-10 cursor-not-allowed">
-                        <AvatarFallback className="text-sm font-medium sm:text-base">I</AvatarFallback>
+                        <AvatarFallback className="text-sm font-medium sm:text-base">A</AvatarFallback>
                     </Avatar>
                 </div>
             </div>
