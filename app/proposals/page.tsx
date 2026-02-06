@@ -3,13 +3,13 @@ import { PageTransition } from "@/components/PageTransition";
 import { generatePageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = generatePageMetadata({
-  title: "Proposals",
-  description: "Review investment proposals from partners and co-investors. Track proposal status, terms, and investment amounts.",
+  title: "Applications",
+  description: "Review investment applications from partners and co-investors. Track application status, terms, and investment amounts.",
   path: "/proposals",
-  keywords: ["investment proposals", "partnership opportunities", "co-investment", "deal flow"],
+  keywords: ["investment applications", "partnership applications", "co-investment", "deal flow"],
 });
 
-const proposals = [
+const applications = [
   {
     id: '1',
     investor: 'Sarah Martinez',
@@ -73,26 +73,26 @@ const proposals = [
 ];
 
 export default function ProposalsPage() {
-  const underReview = proposals.filter(p => p.status === 'Under Review');
-  const approved = proposals.filter(p => p.status === 'Approved');
-  const declined = proposals.filter(p => p.status === 'Declined');
+  const underReview = applications.filter(p => p.status === 'Under Review');
+  const approved = applications.filter(p => p.status === 'Approved');
+  const declined = applications.filter(p => p.status === 'Declined');
 
-  const totalProposed = proposals.reduce((sum, p) => sum + p.investmentAmount, 0);
+  const totalProposed = applications.reduce((sum, p) => sum + p.investmentAmount, 0);
 
   return (
     <PageTransition>
       <main className="mx-auto max-w-[1440px] px-4 py-6 sm:px-6 sm:py-8 md:px-16">
         <div className="mb-6 flex flex-col gap-4 sm:mb-8 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <h1 className="text-xl font-semibold text-[#191919]">Investment Proposals</h1>
-            <p className="mt-1 text-sm text-[#606060]">Review and manage investment proposals from partners</p>
+            <h1 className="text-xl font-semibold text-[#191919]">Applications</h1>
+            <p className="mt-1 text-sm text-[#606060]">Review and manage investment applications from partners</p>
           </div>
           <button
             type="button"
             disabled
             className="cursor-not-allowed rounded-full border border-[#D6D6D6] bg-white px-6 py-2.5 text-xs font-medium text-[#191919] opacity-60"
           >
-            New Proposal
+            New Application
           </button>
         </div>
 
@@ -132,8 +132,8 @@ export default function ProposalsPage() {
                 </tr>
               </thead>
               <tbody>
-                {proposals.map((proposal, index) => (
-                  <tr key={proposal.id} className={index !== proposals.length - 1 ? "border-b border-[#E4E4E4]" : ""}>
+                {applications.map((proposal, index) => (
+                  <tr key={proposal.id} className={index !== applications.length - 1 ? "border-b border-[#E4E4E4]" : ""}>
                     <td className="px-4 py-4">
                       <div className="flex items-center gap-3">
                         <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#F5F5F5] text-sm font-semibold text-[#191919]">

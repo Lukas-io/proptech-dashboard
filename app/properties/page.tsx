@@ -6,10 +6,10 @@ import { properties } from "@/data/properties";
 import PropertyCard from "@/components/PropertyCard";
 
 export const metadata: Metadata = generatePageMetadata({
-  title: "Properties",
-  description: "View and manage your investment property portfolio. Track ROI, cash flow, appreciation, and property performance metrics.",
+  title: "Listings",
+  description: "Browse and manage property listings. View active, under contract, and analysis-phase properties with detailed metrics.",
   path: "/properties",
-  keywords: ["investment properties", "real estate portfolio", "property management", "ROI tracking"],
+  keywords: ["property listings", "real estate listings", "available properties", "property search"],
   ogImage: "/og-images/properties.png",
 });
 
@@ -26,15 +26,15 @@ export default function PropertiesPage() {
       <main className="mx-auto max-w-[1440px] px-4 py-6 sm:px-6 sm:py-8 md:px-16">
         <div className="mb-6 flex flex-col gap-4 sm:mb-8 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <h1 className="text-xl font-semibold text-[#191919]">Properties</h1>
-            <p className="mt-1 text-sm text-[#606060]">Manage your investment property portfolio</p>
+            <h1 className="text-xl font-semibold text-[#191919]">Listings</h1>
+            <p className="mt-1 text-sm text-[#606060]">Browse and manage all property listings</p>
           </div>
           <button
             type="button"
             disabled
             className="cursor-not-allowed rounded-full border border-[#D6D6D6] bg-white px-6 py-2.5 text-xs font-medium text-[#191919] opacity-60"
           >
-            Add New Property
+            Add New Listing
           </button>
         </div>
 

@@ -3,10 +3,10 @@ import { PageTransition } from "@/components/PageTransition";
 import { generatePageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = generatePageMetadata({
-  title: "Opportunities",
-  description: "Track investment opportunities, due diligence requests, property inspections, and market analysis for potential acquisitions.",
+  title: "Request",
+  description: "Manage due diligence requests, property inspections, market analysis, and financing approvals for property acquisitions.",
   path: "/opportunities",
-  keywords: ["investment opportunities", "due diligence", "property acquisition", "market analysis"],
+  keywords: ["due diligence requests", "property inspection requests", "market analysis", "financing approvals"],
 });
 
 const opportunities = [
@@ -74,15 +74,15 @@ export default function OpportunitiesPage() {
       <main className="mx-auto max-w-[1440px] px-4 py-6 sm:px-6 sm:py-8 md:px-16">
         <div className="mb-6 flex flex-col gap-4 sm:mb-8 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <h1 className="text-xl font-semibold text-[#191919]">Investment Opportunities</h1>
-            <p className="mt-1 text-sm text-[#606060]">Track and manage potential investment opportunities</p>
+            <h1 className="text-xl font-semibold text-[#191919]">Request</h1>
+            <p className="mt-1 text-sm text-[#606060]">Manage and track all property-related requests</p>
           </div>
           <button
             type="button"
             disabled
             className="cursor-not-allowed rounded-full border border-[#D6D6D6] bg-white px-6 py-2.5 text-xs font-medium text-[#191919] opacity-60"
           >
-            New Opportunity
+            New Request
           </button>
         </div>
 
