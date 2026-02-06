@@ -117,7 +117,7 @@ export function PortfolioOverviewSection() {
           </button>
         </div>
       </div>
-      <hr className="my-2.5 border" />
+      <hr className="my-2.5 border-0 border-t border-[#E4E4E4]" />
       <div className="flex flex-col gap-5 lg:flex-row lg:gap-5">
         <div className="relative min-w-0 flex-1 overflow-hidden">
           <div className="absolute left-0 top-1/2 z-10 hidden -translate-y-1/2 sm:flex sm:items-center sm:justify-center">
