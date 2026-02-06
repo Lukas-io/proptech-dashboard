@@ -54,14 +54,22 @@ function MetricCard({
   trend: "up" | "down";
   valueColor: string;
 }) {
+  // Determine font size based on value length
+  const getValueFontSize = () => {
+    const length = value.length;
+    if (length > 18) return "text-xs sm:text-sm"; // Very long numbers
+    if (length > 15) return "text-sm sm:text-base"; // Long numbers
+    return "text-base sm:text-lg"; // Normal/short numbers
+  };
+
   return (
     <div className="rounded-xl border border-[#E4E4E4] bg-white px-2 py-3 sm:px-3 sm:py-4 flex flex-col min-w-0 overflow-hidden">
-      <p className="text-sm font-semibold sm:text-base truncate" style={{ color: valueColor }} title={value}>
+      <p className={`${getValueFontSize()} font-semibold truncate`} style={{ color: valueColor }} title={value}>
         {value}
       </p>
       <div className="mt-1.5 sm:mt-2 flex items-center gap-2 min-w-0">
-        <span className="text-xs font-medium text-[#3D3D3D] shrink-0">{label}</span>
-        <span className={`flex shrink-0 items-center gap-0.5 text-[10px]`} style={{ color: label === "Total Inflow" ? "#12B76A" : valueColor }}>
+        <span className="text-xs sm:text-sm font-medium text-[#3D3D3D] shrink-0">{label}</span>
+        <span className={`flex shrink-0 items-center gap-0.5 text-[10px] sm:text-xs`} style={{ color: label === "Total Inflow" ? "#12B76A" : valueColor }}>
           {trend === "up" ? <FaArrowAltCircleUp /> : <FaArrowAltCircleDown />}
           {change}
         </span>
