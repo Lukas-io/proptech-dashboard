@@ -2,7 +2,7 @@
 
 > A sophisticated property investment platform built for the AI-first web. Optimized for both human users and AI agents.
 
-**Live Demo**: [proptech-dashboard.vercel.app](https://proptech-dashboard.vercel.app)
+**Live Demo**: [proptech-dashboard-flax.vercel.app](https://proptech-dashboard-flax.vercel.app)
 
 ![Dashboard Preview](./designs/Dashboard.png)
 
@@ -221,7 +221,7 @@ npm run start
 
 **Environment Variables** (optional):
 ```env
-NEXT_PUBLIC_BASE_URL=https://expertinvestment.com
+NEXT_PUBLIC_BASE_URL=https://proptech-dashboard-flax.vercel.app
 NEXT_PUBLIC_API_URL=your_api_url
 ```
 

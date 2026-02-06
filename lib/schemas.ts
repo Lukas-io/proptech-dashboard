@@ -5,8 +5,8 @@ export function getOrganizationSchema(): WithContext<Organization> {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'Expert Investment',
-    url: 'https://expertinvestment.com',
-    logo: 'https://expertinvestment.com/icons/Logo.svg',
+    url: 'https://proptech-dashboard-flax.vercel.app',
+    logo: 'https://proptech-dashboard-flax.vercel.app/icons/Logo.svg',
     description: 'Professional property investment analytics and portfolio management platform for real estate investors.',
     contactPoint: {
       '@type': 'ContactPoint',
@@ -42,7 +42,7 @@ export function getSoftwareApplicationSchema(): WithContext<SoftwareApplication>
       'Investor management',
       'Investment opportunity pipeline',
     ],
-    screenshot: 'https://expertinvestment.com/og-images/home.png',
+    screenshot: 'https://proptech-dashboard-flax.vercel.app/og-images/home.png',
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '4.8',

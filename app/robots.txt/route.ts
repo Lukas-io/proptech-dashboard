@@ -27,7 +27,7 @@ Disallow: /api/
 Disallow: /_next/
 Disallow: /private/
 
-Sitemap: https://expertinvestment.com/sitemap.xml`;
+Sitemap: https://proptech-dashboard-flax.vercel.app/sitemap.xml`;
 
   return new Response(robotsTxt, {
     headers: {

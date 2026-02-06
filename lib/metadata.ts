@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://expertinvestment.com';
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://proptech-dashboard-flax.vercel.app';
 
 interface PageMetadataProps {
   title: string;

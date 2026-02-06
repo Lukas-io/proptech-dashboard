@@ -1,6 +1,6 @@
 import { properties } from '@/data/properties';
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://expertinvestment.com';
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://proptech-dashboard-flax.vercel.app';
 
 export async function GET() {
   const currentDate = new Date().toISOString();
