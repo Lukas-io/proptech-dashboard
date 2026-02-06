@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { MapPin, Home, Bed, Bath, Maximize2 } from "lucide-react";
+import { Home, Bed, Bath, Maximize2 } from "lucide-react";
 import { InvestmentProperty } from "@/types";
 
 const AUTO_ADVANCE_MS = 4000;
@@ -181,10 +181,7 @@ export default function PropertyCard(props: PropertyCardProps) {
 
       {/* Bottom Info */}
       <div className="absolute bottom-0 left-0 right-0 p-4 z-20">
-        <div className="mb-2 flex items-center gap-1.5">
-          <MapPin className="h-3.5 w-3.5 text-white/80" />
-          <p className="text-xs font-semibold uppercase tracking-wide text-white/90">{displayBadge}</p>
-        </div>
+        <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-white/90">{displayBadge}</p>
         <h3 className="text-lg font-bold text-white leading-tight line-clamp-2 mb-2">
           {displayTitle}
         </h3>

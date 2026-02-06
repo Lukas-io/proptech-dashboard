@@ -9,21 +9,21 @@ import { Button } from "@/components/ui/button";
 const features = [
   {
     icon: "/icons/budgeting/category.svg",
-    title: "Calculate ROI and cash-on-cash returns",
+    title: "Set up annual budgets by account category",
     description:
-      "Analyze potential investments with detailed financial projections and return calculations.",
+      "Allocate funds across income and expense lines with full visibility.",
   },
   {
     icon: "/icons/budgeting/track.svg",
-    title: "Track investment performance over time",
+    title: "Track actuals vs budget in real time",
     description:
-      "Monitor your properties against targets with real-time performance metrics and analytics.",
+      "See how your community is performing against plan, month by month.",
   },
   {
     icon: "/icons/budgeting/figures.svg",
-    title: "Compare scenarios and forecast returns",
+    title: "Adjust figures and forecast with ease",
     description:
-      "Adjust variables, compare investment strategies, and model future portfolio growth.",
+      "Edit amounts, apply percentage changes, or roll forward last year's data—all in one place.",
   },
 ];
 
